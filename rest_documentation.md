@@ -10,7 +10,7 @@ The document describes REST services provided by Tiimityo Spring Boot backend ap
 4. Delete product -> http://localhost:8080/rest/products/{id}
 
 ### REST requests and responses
-1. **Get all products**  
+**1. Get all products**  
 HTTP method: GET  
 API call: http://localhost:8080/rest/products  
 Request body: -  
@@ -37,7 +37,7 @@ Response example:
     }       
 ]
 ```
-2. **Insert new product**  
+**2. Insert new product**  
 HTTP method: POST  
 API call: http://localhost:8080/rest/products  
 Request body:  
@@ -76,7 +76,7 @@ Response example:
     }
 }
 ```
-3. **Edit product** 
+**3. Edit product**  
 HTTP method: PUT  
 API call: http://localhost:8080/rest/products/{id}  
 Request body:
@@ -103,7 +103,7 @@ Response example:
     "productType":{"id":1,"name":"Vaate"}
 }
 ```
-3. **Edit product** 
+**4. Delete product**  
 HTTP method: DELETE 
 API call: http://localhost:8080/rest/products/{id}  
 Request body: -  
@@ -113,3 +113,14 @@ Response example:
 Product ID 4 has been deleted successfully
 ```
 ### HTTP methods
+| HTTP method| Endpoint       | Input                           | Success response | Error response | Description |
+| :------    | :------:       | :----:                          | :----: | :----: |  :----: |
+| GET        | /rest/cars     | Body: empty                     | 200 | 500 | Fetch all products
+| POST       | /rest/cars     | Body: new product data          | 200 | 500 | Create new product
+| PUT        | /rest/cars/{id}| Body: product data with updates | 200 | 500 |Update existing product
+| DELETE     | /rest/cars/{id}| Body: empty                   | 200 | 500 | Delete existing product
+| PUT        | /rest/cars| N/A | N/A | 400 |Method not allowed
+| DELETE     | /rest/cars| N/A                     | N/A | 400 | Method not allowed
+| GET        | /api/cars/{id}     | Body: empty                     | 200 | 500 | Fetch one product via default Spring Boot Data REST
+| GET        | /api/manufacturers     | Body: empty                     | 200 | 500 | Fetch all manufacturers via default Spring Boot Data REST
+| GET        | /api/productTypes     | Body: empty                     | 200 | 500 | Fetch all product types via default Spring Boot Data REST
