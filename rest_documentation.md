@@ -9,8 +9,8 @@ The document describes REST services provided by Tiimityo Spring Boot backend ap
 3. Edit product -> `http://localhost:8080/rest/products/{id}`  
 4. Delete product -> `http://localhost:8080/rest/products/{id}`  
 
-Spring Data REST endpoints available for all CrudRepositories  
-Usage info on [Spring data repository resources](https://docs.spring.io/spring-data/rest/reference/repository-resources.html)  
+**Spring Data REST /api endpoints available for all CrudRepositories**  
+Usage: [Spring data repository resources](https://docs.spring.io/spring-data/rest/reference/repository-resources.html)  
 i. `http://localhost:8080/api/products`  
 ii. `http://localhost:8080/api/manufacturers`  
 iii. `http://localhost:8080/api/productTypes`
@@ -120,12 +120,6 @@ Product ID 4 has been deleted successfully
 ```
 ### HTTP methods
 
-<style>
-    .httpTable tr:nth-child(5) {color: #CF6679}
-    .httpTable tr:nth-child(6) {color: #CF6679}
-</style>
-
-<div class="httpTable">
 
 | HTTP method| Endpoint       | Input                           | Success response | Error response | Description |
 | :------    | :------:       | :----:                          | :----: | :----: |  :----: |
@@ -138,5 +132,3 @@ Product ID 4 has been deleted successfully
 | GET        | /api/products/{id}     | Body: empty                     | 200 | 500 | Fetch one product via Spring Data REST
 | GET        | /api/manufacturers     | Body: empty                     | 200 | 500 | Fetch all manufacturers via via Spring Data REST
 | GET        | /api/productTypes     | Body: empty                     | 200 | 500 | Fetch all product types via via Spring Data REST
-
-</div>
