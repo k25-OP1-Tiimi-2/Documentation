@@ -4,15 +4,21 @@
 The document describes REST services provided by Tiimityo Spring Boot backend application.
 
 ### REST resources (services)
-1. Get all products -> http://localhost:8080/rest/products  
-2. Insert new product -> http://localhost:8080/rest/products 
-3. Edit product -> http://localhost:8080/rest/products/{id}  
-4. Delete product -> http://localhost:8080/rest/products/{id}
+1. Get all products -> `http://localhost:8080/rest/products`  
+2. Insert new product -> `http://localhost:8080/rest/products` 
+3. Edit product -> `http://localhost:8080/rest/products/{id}`  
+4. Delete product -> `http://localhost:8080/rest/products/{id}`  
+
+Spring Data REST endpoints available for all CrudRepositories  
+Usage info on [Spring data repository resources](https://docs.spring.io/spring-data/rest/reference/repository-resources.html)  
+i. `http://localhost:8080/api/products`  
+ii. `http://localhost:8080/api/manufacturers`  
+iii. `http://localhost:8080/api/productTypes`
 
 ### REST requests and responses
 **1. Get all products**  
 HTTP method: GET  
-API call: http://localhost:8080/rest/products  
+API call: `http://localhost:8080/rest/products`  
 Request body: -  
 Response code: 200  
 Response example:
@@ -39,11 +45,11 @@ Response example:
 ```
 **2. Insert new product**  
 HTTP method: POST  
-API call: http://localhost:8080/rest/products  
+API call: `http://localhost:8080/rest/products`  
 Request body:  
 ```json
 {
-    "title": "Lippalakki",
+    "title": "Huivi",
     "price": 12.9,
     "color": "Musta",
     "size": "M",
@@ -78,7 +84,7 @@ Response example:
 ```
 **3. Edit product**  
 HTTP method: PUT  
-API call: http://localhost:8080/rest/products/{id}  
+API call: `http://localhost:8080/rest/products/{id}`  
 Request body:
 ```json
 {
@@ -104,8 +110,8 @@ Response example:
 }
 ```
 **4. Delete product**  
-HTTP method: DELETE 
-API call: http://localhost:8080/rest/products/{id}  
+HTTP method: DELETE  
+API call: `http://localhost:8080/rest/products/{id}`  
 Request body: -  
 Response code: 200  
 Response example:
@@ -113,14 +119,24 @@ Response example:
 Product ID 4 has been deleted successfully
 ```
 ### HTTP methods
+
+<style>
+    .httpTable tr:nth-child(5) {color: #CF6679}
+    .httpTable tr:nth-child(6) {color: #CF6679}
+</style>
+
+<div class="httpTable">
+
 | HTTP method| Endpoint       | Input                           | Success response | Error response | Description |
 | :------    | :------:       | :----:                          | :----: | :----: |  :----: |
-| GET        | /rest/cars     | Body: empty                     | 200 | 500 | Fetch all products
-| POST       | /rest/cars     | Body: new product data          | 200 | 500 | Create new product
-| PUT        | /rest/cars/{id}| Body: product data with updates | 200 | 500 |Update existing product
-| DELETE     | /rest/cars/{id}| Body: empty                   | 200 | 500 | Delete existing product
-| PUT        | /rest/cars| N/A | N/A | 400 |Method not allowed
-| DELETE     | /rest/cars| N/A                     | N/A | 400 | Method not allowed
-| GET        | /api/cars/{id}     | Body: empty                     | 200 | 500 | Fetch one product via default Spring Boot Data REST
-| GET        | /api/manufacturers     | Body: empty                     | 200 | 500 | Fetch all manufacturers via default Spring Boot Data REST
-| GET        | /api/productTypes     | Body: empty                     | 200 | 500 | Fetch all product types via default Spring Boot Data REST
+| GET        | /rest/products     | Body: empty                     | 200 | 500 | Fetch all products
+| POST       | /rest/products     | Body: new product data          | 200 | 500 | Create new product
+| PUT        | /rest/products/{id}| Body: product data with updates | 200 | 500 |Update existing product
+| DELETE     | /rest/products/{id}| Body: empty                   | 200 | 500 | Delete existing product
+| PUT        | /rest/products| N/A | N/A | 400 |*Method not allowed*
+| DELETE     | /rest/products| N/A                     | N/A | 400 | *Method not allowed*
+| GET        | /api/products/{id}     | Body: empty                     | 200 | 500 | Fetch one product via Spring Data REST
+| GET        | /api/manufacturers     | Body: empty                     | 200 | 500 | Fetch all manufacturers via via Spring Data REST
+| GET        | /api/productTypes     | Body: empty                     | 200 | 500 | Fetch all product types via via Spring Data REST
+
+</div>
